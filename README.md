@@ -1,17 +1,17 @@
-# Objective
-1. Learn about Large Language Models
-2. Poor with no access to the closed source models such as GPT4 but would like to keep the ability to use them in the future
-3. Understand and use "Agents"
-4. Create a program that can research and write blogs
+In this blog-style tutorial, I will be working towards the following objectives
+
+1. Large Language Models (LLMs). These are artificial neural networks. following a transformer architecture, with the ability to achieve language understanding and generation 
+2. Focus on open source models rather than the closed source ones. Open source models are free to download and train. Documented models show the number of parameters and the data that the model was trained unlike closed source models where we do not understand the number of parameters or the data that the model was trained on.
+3. Keep the cost as close as possible to zero. Use infrastructure created to download and test different open source models locally. No special tools that require subscriptions or limited access and definately none that you will need to pay for especially since I am only testing them to understand capabilities. 
+4. Understand and use "Agents"
+5. Use points 1 through 4 to create a blog researcher and writer. 
 
 Based on my research, here are some of the components I will be using 
 
 1. Ollama
 2. CrewAI
 
-
-
-# Ollama: Large Language Models, Demystified
+## Ollama: Large Language Models, Demystified
 You're trying to build an AI-powered chatbot for your business. You want it to be smart, efficient, and able to handle complex queries. But the popular language models out there have long waiting lists, and registration is a hassle. What do you do? Enter Ollama, the open-source hero who's here to save the day!
 
 Ollama is a platform designed for running, managing, and building local applications with large language models (LLMs). It's like having your very own AI lab right at your fingertips. But what makes Ollama so special? Let's dive in:
