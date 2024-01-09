@@ -30,6 +30,12 @@ Allowing users to access the Linux kernel directly from their Windows machines, 
 
 Use this [link](https://learn.microsoft.com/en-us/windows/wsl/about) to understand more about WSL2, and this [link](https://learn.microsoft.com/en-us/windows/wsl/install) on how to enable it on your Windows machine. 
 
+## What next? (Part one)
+You are convinced. You have installed WSL2 and have access to bash. Let's talk a little out the programming language and interface we will be using to accomplish our task.
+
+The preferred programming language for Data Scientists is Python. And the interface I will choose today is Visual Studio Code. The short answer to why I am choosing this editor is the ability to write both complex Python packages and simple notebooks for testing code. You can learn more about Visual Studio Code [here](https://code.visualstudio.com/docs). Implement the simple example provided [here](https://code.visualstudio.com/docs/python/python-tutorial) to ensure that your machine and environment is fully set up. 
+
+
 
 
 
