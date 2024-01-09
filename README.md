@@ -15,6 +15,26 @@ The first language models, such as Recurrent Neural Networks (RNNs) and Long Sho
 
 They are primarily based on Transformer architectures, introduced by Vaswani et al. in their seminal paper "Attention is All You Need." The Transformer model utilizes self-attention mechanisms to understand the context of words within a sentence, making it an efficient and scalable method for processing long sequences of text.
 
+## Open-source Vs. Closed-source
+
+The world of AI is ever-evolving, and understanding the difference between open-source and closed-source LLMs can be crucial in finding the right balance for your needs. Whether you're a small business trying to streamline operations or an individual looking for personalized recommendations, choosing between open and closed-source LLMs will depend on the specifics of your situation. The important thing is to stay informed and make decisions that align with your goals and values.
+
+**Advantages of Open-Source LLMs**
+A. Control over Training Data
+B. Cost-Effectiveness
+C. Customizable Applications
+
+**Disadvantages of Open-Source LLMs**
+A. Performance
+B. Limited Development Resources
+
+**Advantages of Closed Source LLMs**
+A. Potential for Better Performance
+B. Support from Large Companies and Additional Development Resources
+
+**Disadvantages of Closed Source LLMs**
+A. Potential Misuse of AI
+B. Can get expensive based on the task
 
 ## What will I be using to achieve my objective
 Based on my research, here are some of the components I will be using 
