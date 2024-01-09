@@ -1,10 +1,11 @@
 In this blog-style tutorial, I will be working towards the following objectives.
 
-1. Understand Large Language Models (LLMs). 
-2. Focus on open-source models rather than the closed-source ones. Open-source models are free to download and train. Documented models show the number of parameters and the data that the model was trained on, unlike closed source models where we do not understand the number of parameters or the data that the model was trained on.
-3. Keep the cost as close as possible to zero. Use infrastructure created to download and test different open-source models locally. No special tools that require subscriptions or limited access and definitely none that you will need to pay for especially since I am only testing them to understand capabilities. 
-4. Understand and use "Agents"
-5. Use points 1 through 4 to create a blog researcher and writer. 
+1. Understand Large Language Models (LLMs).
+2. Open-source vs. Closed-source models
+3. Focus on open-source models rather than the closed-source ones. Open-source models are free to download and train. Documented models show the number of parameters and the data that the model was trained on, unlike closed source models where we do not understand the number of parameters or the data that the model was trained on.
+4. Keep the cost as close as possible to zero. Use infrastructure created to download and test different open-source models locally. No special tools that require subscriptions or limited access and definitely none that you will need to pay for especially since I am only testing them to understand capabilities. 
+5. Understand and use "Agents"
+6. Use points 1 through 4 to create a blog researcher and writer. 
 
 ## What are Large Language Models?
 
