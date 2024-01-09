@@ -10,7 +10,42 @@ Ollama is a platform designed for running, managing, and building local applicat
 5. **Performance Perks**: Ollama optimizes performance, ensuring your large language models run smoothly even on lower-end hardware. It also plays well with cloud services like Fly.io for a faster experience.
 6. **Open-Source Advancements**: By using Ollama, you're not only avoiding registration and waitlists but also leveraging the latest advancements in open-source large language models for your applications.
 
-So there you have it! With Ollama, you can ditch the waiting lists and enjoy the benefits of cutting-edge AI technology without any fuss. Happy coding!"
+With Ollama, you can ditch the waiting lists and enjoy the benefits of cutting-edge AI technology without any fuss.
+
+## but .. (there is always one)
+As of the time of writing this blog, Ollama is not available on Windows. It has been released for MacOS and Linux. This puts some developers at a significant disadvantage as the thought of programming in Linux sends shivers down some spines. Some time ago, the only way to experience Linux was to have it installed in a separate space on your machine. This was cumbersome and the files were not shared without significant effort. Do you remember the times when Microsoft used to hate Linux and did everything in its power to stop integration in the name of "security"? Well, I am glad to inform the few who have not kept up with the advancements that Microsoft now loves Linux. We have now got WSL2 or the second version of "Windows Subsystem for Linux".
+
+## Windows Subsystem for Linux (WSL)
+WSL2 is the latest version of the Windows Subsystem for Linux, which allows Windows users to access the Linux kernel directly. It has become increasingly popular due to its ease of use and interoperability between Windows and Linux. Some of the most popular facts about WSL2 include:
+
+  - WSL2 uses a virtualized Linux kernel with less overhead compared to traditional virtual machines, making it more efficient.
+  - The system call compatibility between WSL2 and Linux is full, allowing for seamless integration between the two operating systems.
+  - WSL2 makes it easy to share files between Windows and Linux environments without requiring extra work.
+  - Users can choose from various Linux distributions available on the Microsoft Store or install WSL2 using PowerShell.
+  - The Windows Terminal is a recommended tool for working with terminals in Windows, as it provides a modern, fast, and efficient experience.
+  - It's easier to use WSL2 compared to traditional virtual machines or dual-boot setups, as no modifications are needed for Linux applications, utilities, and Bash command-line tools.
+  - Developers can leverage the full power of Linux on Windows 10 and Windows 11, making it an invaluable tool for their work.
+
+Allowing users to access the Linux kernel directly from their Windows machines, you can now run Linux applications, utilities, and Bash command-line tools without needing a separate Linux installation or dual-boot setup. It's easier and more efficient than ever before. With WSL2, users can enjoy full system call compatibility between Windows and Linux, making it simple to share files between the two environments without any extra work. This virtualized Linux kernel is also more efficient than traditional virtual machines, using less overhead to provide a faster and smoother experience.
+
+Use this [link](https://learn.microsoft.com/en-us/windows/wsl/) to understand more about WSL2, and this [link](https://learn.microsoft.com/en-us/windows/wsl/install) on how to enable it on your Windows machine. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Here is the full blog post:
