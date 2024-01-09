@@ -198,9 +198,6 @@ result = crew.kickoff()
 
 Here is an example of an output provided by the Crew
 
-```
-Here is the full blog post:
-
 Title: Exploring the Latest Features of Torizon OS and TorizonCore - A Comprehensive Guide for Tech Enthusiasts!
 
 Hey there, fellow tech enthusiasts! Today, we're diving into the latest features of Torizon OS and TorizonCore. Why, you ask? Well, because our mission is to make complex tech concepts accessible and exciting for all of you!
@@ -214,4 +211,12 @@ And if you think that was impressive, wait until you hear about their new device
 Oh, and let's not forget about TorizonCore 5.7.2, the latest maintenance release focused on improving stability and reliability for use in embedded Linux software development. This update follows the recent release of TorizonCore 6.1.0, which brings new features to Toradex's System on Modules. It's like getting a brand-new toolbox filled with helpful gadgets!
 
 But hold your horses, because there's an even bigger upgrade on the horizon - the upcoming Torizon OS 6 update with a bootloader upgrade. Just imagine what that could mean for the future of IoT devices and applications! The possibilities are endless.\n\nSo there you have it, folks! The latest features of Torizon OS and TorizonCore in a nutshell. We hope we've made this tech journey as exciting as possible, proving once again that complex doesn't always mean complicated. Keep an eye on these innovative platforms, as the future looks brighter than ever!
-```
+
+## Conclusion
+Pretty for a first attempt. And the kicker; large sections of this post were written by this AI implementation! The example was validated by a human and the rating provided was a 5 out of 10. The limitation stated was that the information provided was old. BUT, a good first draft. 
+
+Most implementation frameworks provide models but with no connection to the internet to fetch the latest information. For example, [LMStudio](https://lmstudio.ai/) is an exciting way to test new open-source models locally. The best bit is that the interface shows you the models you can run on your local systems and the ones that will not run due to system limitations like the availability of RAM. With DuckDuckGo-Search, we gave the model access to the internet.
+
+## What's next
+Providing context to the model, via documents or a VectorDB. We will soon be testing how pre-trained models perform when asking questions about the documents or DB that we provide. 
+
