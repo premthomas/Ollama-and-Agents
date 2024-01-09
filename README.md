@@ -3,7 +3,7 @@ In this blog-style tutorial, I will be working towards the following objectives.
 1. Understand Large Language Models (LLMs).
 2. Open-source vs. Closed-source models
 3. Focus on open-source models rather than the closed-source ones. Open-source models are free to download and train. Documented models show the number of parameters and the data that the model was trained on, unlike closed source models where we do not understand the number of parameters or the data that the model was trained on.
-4. Keep the cost as close as possible to zero. Use infrastructure created to download and test different open-source models locally. No special tools that require subscriptions or limited access and definitely none that you will need to pay for especially since I am only testing them to understand capabilities. 
+4. Keep the cost as close as possible to zero. Use infrastructure created to download and test different open-source models locally. No special tools that require subscriptions or limited access and none that I will need to pay for since I am only testing them to understand capabilities. 
 5. Understand and use "Agents"
 6. Use points 1 through 4 to create a blog researcher and writer. 
 
@@ -60,8 +60,10 @@ Ollama is a platform designed for running, managing, and building local applicat
 
 With Ollama, you can ditch the waiting lists and enjoy the benefits of cutting-edge AI technology without any fuss.
 
+
 ## but .. (there is always one)
 As of the time of writing this blog, Ollama is not available on Windows. It has been released for MacOS and Linux. This puts some developers at a significant disadvantage as the thought of programming in Linux sends shivers down some spines. Some time ago, the only way to experience Linux was to have it installed in a separate space on your machine. This was cumbersome and the files were not shared without significant effort. Do you remember the times when Microsoft used to hate Linux and did everything in its power to stop integration in the name of "security"? Well, I am glad to inform the few who have not kept up with the advancements that Microsoft now loves Linux. We have now got WSL2 or the second version of "Windows Subsystem for Linux".
+
 
 ## Windows Subsystem for Linux (WSL)
 WSL2 is the latest version of the Windows Subsystem for Linux, which allows Windows users to access the Linux kernel directly. It has become increasingly popular due to its ease of use and interoperability between Windows and Linux. Some of the most popular facts about WSL2 include:
@@ -78,10 +80,11 @@ Allowing users to access the Linux kernel directly from their Windows machines, 
 
 Use this [link](https://learn.microsoft.com/en-us/windows/wsl/about) to understand more about WSL2, and this [link](https://learn.microsoft.com/en-us/windows/wsl/install) on how to enable it on your Windows machine. 
 
-## What next? (Part one)
-You are convinced. You have installed WSL2 and have access to bash. Let's talk a little out the programming language and interface we will be using to accomplish our task.
 
-The preferred programming language for Data Scientists is Python. And the interface I will choose today is Visual Studio Code. The short answer to why I am choosing this editor is the ability to write both complex Python packages and simple notebooks for testing code. You can learn more about Visual Studio Code [here](https://code.visualstudio.com/docs). Implement the simple example provided [here](https://code.visualstudio.com/docs/python/python-tutorial) to ensure that your machine and environment is fully set up. 
+## What next? (Part one)
+You are convinced. You have installed WSL2 and have access to bash. Let's talk a little about the programming language and interface we will be using to accomplish our task.
+
+The preferred programming language for Data Scientists is Python. And the interface I will choose today is Visual Studio Code. The short answer to why I am choosing this editor is the ability to write both complex Python packages and simple notebooks for testing code. You can learn more about Visual Studio Code [here](https://code.visualstudio.com/docs). Implement the simple example provided [here](https://code.visualstudio.com/docs/python/python-tutorial) to ensure that your machine and environment are fully set up. 
 
 
 
