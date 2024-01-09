@@ -42,8 +42,12 @@ Based on my research, here are some of the components I will be using
 2. **Code editor:** Visual Studio Code
 3. **Programming Language:** Python
 4. **Libraries and other components:**
-    1. Ollama
-    2. CrewAI
+    1. CrewAI
+    2. Ollama
+
+
+## CrewAI
+What is better than an agent? Multiple agents. [CrewAI](https://github.com/joaomdmoura/crewAI) is a framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks. CrewAI works with local models downloaded via Ollama or remote models like OpenAI.
 
 
 ## Ollama: Large Language Models, Demystified
@@ -85,6 +89,17 @@ Use this [link](https://learn.microsoft.com/en-us/windows/wsl/about) to understa
 You are convinced. You have installed WSL2 and have access to bash. Let's talk a little about the programming language and interface we will be using to accomplish our task.
 
 The preferred programming language for Data Scientists is Python. And the interface I will choose today is Visual Studio Code. The short answer to why I am choosing this editor is the ability to write both complex Python packages and simple notebooks for testing code. You can learn more about Visual Studio Code [here](https://code.visualstudio.com/docs). Implement the simple example provided [here](https://code.visualstudio.com/docs/python/python-tutorial) to ensure that your machine and environment are fully set up. 
+
+
+## Let's begin
+For ease of explainability, I will be using a notebook.
+
+Step 1: Install and import the library for CrewAI
+
+`pip install crewai` (Run this code on the terminal)
+
+`from crewai import Agent, Task, Crew, Process`
+
 
 
 
