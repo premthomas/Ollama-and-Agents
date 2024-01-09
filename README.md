@@ -92,13 +92,20 @@ The preferred programming language for Data Scientists is Python. And the interf
 
 
 ## Let's begin
-For ease of explainability, I will be using a notebook.
+For ease of explainability, I will be using a notebook. The full code can be found on GitHub
 
 Step 1: Install and import the library for CrewAI
 
 `pip install crewai` (Run this code on the terminal)
 
 `from crewai import Agent, Task, Crew, Process`
+
+Step 2: 
+
+```
+from langchain.llms import Ollama
+ollama_llm = Ollama(model="openhermes")
+```
 
 
 
