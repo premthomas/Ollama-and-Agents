@@ -94,43 +94,111 @@ The preferred programming language for Data Scientists is Python. And the interf
 ## Let's begin
 For ease of explainability, I will be using a notebook. The full code can be found on GitHub
 
-Step 1: Install and import the library for CrewAI
+**Step 0:** Prerequisites 
 
-`pip install crewai` (Run this code on the terminal)
+Run the following code snippets once per project build, on the terminal.
+
+`pip install crewai`
+Installs the CrewAI library
+
+`pip install langchain`
+Installs the LangChain library
+
+`pip install duckduckgo-search`
+Install the DuckDuckGo-Search library
+
+`ollama pull openhermes` 
+Pulls the model into the local system. "openhermes" is the model and can be replaced with any of the models hosted by Ollama.
+
+**Step 1:** Import the library for CrewAI
 
 `from crewai import Agent, Task, Crew, Process`
 
-Step 2: 
+**Step 2:** Import Ollama and initialize the llm
 
 ```
 from langchain.llms import Ollama
 ollama_llm = Ollama(model="openhermes")
 ```
 
+**Step 3:** Import and initialize DuckDuckGo
+```
+from langchain.tools import DuckDuckGoSearchRun
+search_tool = DuckDuckGoSearchRun()
+```
+This is used to provide the model access to the internet. 
 
+**Step 4:** Configure the first agent. I am going with the "Researcher".
 
+```
+researcher = Agent(
+  role='Researcher',
+  goal='Search the internet for the information requested,
+  backstory="""
+  You are a researcher. Using the information in the task, you find out some of the most popular facts about the topic along with some of the trending aspects.
+  You provide a lot of information thereby allowing a choice in the content selected for the final blog
+  """,
+  verbose=True,            # want to see the thinking behind
+  allow_delegation=False,  # Not allowed to ask any of the other roles
+  tools=[search_tool],     # Is allowed to use the following tools to conduct research
+  llm=ollama_llm           # local model
+)
+```
 
+**Step 5:** Configure the second agent. I am going to call this the "Technical Content Creator".
 
+```
+writer = Agent(
+  role='Tech Content Strategist',
+  goal='Craft compelling content on a set of information provided by the researcher.',
+  backstory="""You are a writer known for your humorous but informative way of explaining. 
+  You transform complex concepts into compelling narratives.""",
+  verbose=True,            # want to see the thinking behind
+  allow_delegation=True,   # can ask the "researcher" for more information
+  llm=ollama_llm           # using the local model
+```
 
+**Step 6:** Define the task that needs to be done by the "Researcher". Call this "Task1"
 
+```
+task1 = Task(
+  description="""Research about open source LLMs vs closed source LLMs. 
+  Your final answer MUST be a full analysis report""",
+  agent=researcher
+```
 
+**Step 7:** Define the task that needs to be done by the "Technical Content Creator". Call this "Task2"
 
+```
+task2 = Task(
+  description="""Using the insights provided, develop an engaging blog
+  post that highlights the most significant facts and differences between open-source LLMs and closed-source LLMs.
+  Your post should be informative yet accessible, catering to a tech-savvy audience.
+  Make it sound cool, and avoid complex words so it doesn't sound like AI.
+  Your final answer MUST be the full blog post of at least 4 paragraphs.
+  The target word count for the blog post should be between 1,500 and 2,500 words, with a sweet spot at around 2,450 words.""",
+  agent=writer
+)
+```
 
+**Step 8:** Instantiate the "crew" with a sequential process
 
+```
+crew = Crew(
+  agents=[researcher, writer],
+  tasks=[task1, task2],
+  verbose=2, # You can set it to 1 or 2 for different logging levels
+```
 
+**Step 9:**  Get your crew to start work
 
+```
+result = crew.kickoff()
+```
 
+Here is an example of an output provided by the Crew
 
-
-
-
-
-
-
-
-
-
-
+```
 Here is the full blog post:
 
 Title: Exploring the Latest Features of Torizon OS and TorizonCore - A Comprehensive Guide for Tech Enthusiasts!
@@ -146,26 +214,4 @@ And if you think that was impressive, wait until you hear about their new device
 Oh, and let's not forget about TorizonCore 5.7.2, the latest maintenance release focused on improving stability and reliability for use in embedded Linux software development. This update follows the recent release of TorizonCore 6.1.0, which brings new features to Toradex's System on Modules. It's like getting a brand-new toolbox filled with helpful gadgets!
 
 But hold your horses, because there's an even bigger upgrade on the horizon - the upcoming Torizon OS 6 update with a bootloader upgrade. Just imagine what that could mean for the future of IoT devices and applications! The possibilities are endless.\n\nSo there you have it, folks! The latest features of Torizon OS and TorizonCore in a nutshell. We hope we've made this tech journey as exciting as possible, proving once again that complex doesn't always mean complicated. Keep an eye on these innovative platforms, as the future looks brighter than ever!
-
-Windows Subsystem for Linux (WSL)
-WSL2 is the latest version of the Windows Subsystem for Linux, which allows Windows users to access the Linux kernel directly. It has become increasingly popular due to its ease of use and interoperability between Windows and Linux. Some of the most popular facts about WSL2 include:
-
-WSL2 uses a virtualized Linux kernel with less overhead compared to traditional virtual machines, making it more efficient.
-The system call compatibility between WSL2 and Linux is full, allowing for seamless integration between the two operating systems.
-WSL2 makes it easy to share files between Windows and Linux environments without requiring extra work.
-Users can choose from various Linux distributions available on the Microsoft Store or install WSL2 using PowerShell.
-The Windows Terminal is a recommended tool for working with terminals in Windows, as it provides a modern, fast, and efficient experience.
-It's easier to use WSL2 compared to traditional virtual machines or dual-boot setups, as no modifications are needed for Linux applications, utilities, and Bash command-line tools.
-Developers can leverage the full power of Linux on Windows 10 and Windows 11, making it an invaluable tool for their work.
-As for the trending aspects of WSL2, some topics that have gained recent attention include:
-
-Performance comparisons between WSL2 and native Ubuntu installations
-The integration of WSL2 with the Windows Terminal for a more streamlined experience
-The use of WSL2 for containerization and Docker development on Windows
-The compatibility of various Linux distributions within the WSL2 environment
-Best practices for setting up multiple profiles in WSL2 using the Windows Terminal
-Welcome to the exciting world of WSL2! As a tech-savvy user, you may already be familiar with the concept of a virtual machine or dual-boot setup to run Linux on your Windows machine. But what if I told you there's a better way? That's where WSL2 comes in.
-
-WSL2 stands for Windows Subsystem for Linux 2, and it is Microsoft's latest innovation that allows users to access the Linux kernel directly from their Windows machines. This means you can now run Linux applications, utilities, and Bash command-line tools without needing a separate Linux installation or dual-boot setup. And the best part? It's easier and more efficient than ever before!
-
-With WSL2, users can enjoy full system call compatibility between Windows and Linux, making it simple to share files between the two environments without any extra work. This virtualized Linux kernel is also more efficient than traditional virtual machines, using less overhead to provide a faster and smoother experience.
+```
