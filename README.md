@@ -28,7 +28,7 @@ WSL2 is the latest version of the Windows Subsystem for Linux, which allows Wind
 
 Allowing users to access the Linux kernel directly from their Windows machines, you can now run Linux applications, utilities, and Bash command-line tools without needing a separate Linux installation or dual-boot setup. It's easier and more efficient than ever before. With WSL2, users can enjoy full system call compatibility between Windows and Linux, making it simple to share files between the two environments without any extra work. This virtualized Linux kernel is also more efficient than traditional virtual machines, using less overhead to provide a faster and smoother experience.
 
-Use this [link](https://learn.microsoft.com/en-us/windows/wsl/) to understand more about WSL2, and this [link](https://learn.microsoft.com/en-us/windows/wsl/install) on how to enable it on your Windows machine. 
+Use this [link](https://learn.microsoft.com/en-us/windows/wsl/about) to understand more about WSL2, and this [link](https://learn.microsoft.com/en-us/windows/wsl/install) on how to enable it on your Windows machine. 
 
 
 
