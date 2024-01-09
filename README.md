@@ -18,12 +18,14 @@ They are primarily based on Transformer architectures, introduced by Vaswani et 
 ## What will I be using to achieve my objective
 Based on my research, here are some of the components I will be using 
 
-1. Operating system: Linux on Windows with WSL2
-2. Code editor: Visual Studio Code
-3. Programming Language: Python
-4. Libraries and other components
-    a. Ollama
-   b. CrewAI
+1. **Operating system:** Linux on Windows with WSL2
+2. **Code editor:** Visual Studio Code
+3. **Programming Language:** Python
+4. **Libraries and other components:**
+    1. Ollama
+    2. CrewAI
+5. 
+
 
 
 ## Ollama: Large Language Models, Demystified
