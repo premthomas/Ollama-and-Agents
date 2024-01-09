@@ -7,6 +7,7 @@ In this blog-style tutorial, I will be working towards the following objectives.
 5. Understand and use "Agents"
 6. Use points 1 through 4 to create a blog researcher and writer. 
 
+
 ## What are Large Language Models?
 
 Large Language Models, or "LLMs", are the latest buzzwords in the world of artificial intelligence (AI) and natural language processing (NLP). These models are AI systems trained on vast amounts of text data, enabling them to generate human-like text and understand complex linguistic patterns. They have significant potential implications for society, ranging from improving customer service chatbots to revolutionizing creative writing, from poetry to code snippets. LLMs are the result of years of research in AI and NLP. 
@@ -15,27 +16,24 @@ The first language models, such as Recurrent Neural Networks (RNNs) and Long Sho
 
 They are primarily based on Transformer architectures, introduced by Vaswani et al. in their seminal paper "Attention is All You Need." The Transformer model utilizes self-attention mechanisms to understand the context of words within a sentence, making it an efficient and scalable method for processing long sequences of text.
 
+
 ## Open-source Vs. Closed-source
 
 The world of AI is ever-evolving, and understanding the difference between open-source and closed-source LLMs can be crucial in finding the right balance for your needs. Whether you're a small business trying to streamline operations or an individual looking for personalized recommendations, choosing between open and closed-source LLMs will depend on the specifics of your situation. The important thing is to stay informed and make decisions that align with your goals and values.
 
-**Advantages of Open-Source LLMs**
+**Open-source LLMs**
+Advantages  | Disadvantages
+------------- | -------------
+Control over Training Data | Performance
+Cost-Effectiveness | Limited Development Resources
+Customizable Applications | 
 
-1. Control over Training Data
-2. Cost-Effectiveness
-3. Customizable Applications
+**Closed-source LLMs**
+Advantages  | Disadvantages
+------------- | -------------
+Potential for Better Performance | Potential Misuse of AI
+Support from Large Companies and Additional Development Resources | Can get expensive based on the task
 
-**Disadvantages of Open-Source LLMs**
-1. Performance
-2. Limited Development Resources
-
-**Advantages of Closed Source LLMs**
-1. Potential for Better Performance
-2. Support from Large Companies and Additional Development Resources
-
-**Disadvantages of Closed Source LLMs**
-1. Potential Misuse of AI
-2. Can get expensive based on the task
 
 ## What will I be using to achieve my objective
 Based on my research, here are some of the components I will be using 
@@ -46,8 +44,6 @@ Based on my research, here are some of the components I will be using
 4. **Libraries and other components:**
     1. Ollama
     2. CrewAI
-5. 
-
 
 
 ## Ollama: Large Language Models, Demystified
