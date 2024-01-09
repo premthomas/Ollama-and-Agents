@@ -1,6 +1,6 @@
 In this blog-style tutorial, I will be working towards the following objectives
 
-1. Large Language Models (LLMs). These are artificial neural networks. following a transformer architecture, with the ability to achieve language understanding and generation 
+1. Understand Large Language Models (LLMs). 
 2. Focus on open source models rather than the closed source ones. Open source models are free to download and train. Documented models show the number of parameters and the data that the model was trained unlike closed source models where we do not understand the number of parameters or the data that the model was trained on.
 3. Keep the cost as close as possible to zero. Use infrastructure created to download and test different open source models locally. No special tools that require subscriptions or limited access and definately none that you will need to pay for especially since I am only testing them to understand capabilities. 
 4. Understand and use "Agents"
@@ -10,6 +10,11 @@ Based on my research, here are some of the components I will be using
 
 1. Ollama
 2. CrewAI
+
+## What are Large Language Models?
+
+Large Language ModelsL, or "LLMs" are the latest buzzwords in the world of artificial intelligence (AI) and natural language processing (NLP). These models are AI systems trained on vast amounts of text data, enabling them to generate human-like text and understand complex linguistic patterns. They have significant potential implications for society, ranging from improving customer service chatbots to revolutionizing creative writing. LLMs are the result of years of research in AI and NLP. The first language models, such as Recurrent Neural Networks (RNNs) and Long Short-Term Memory (LSTM), laid the groundwork for today's powerful LLMs. Fast forward to recent years, and we have witnessed a remarkable evolution in language processing capabilities. GPT-4, developed by OpenAI, is one such example of a state-of-the-art LLM with 176 billion parameters. It has been trained on a massive amount of text data and can generate human-like responses to various prompts, from poetry to code snippets. They are primarily based on Transformer architectures, introduced by Vaswani et al. in their seminal paper "Attention is All You Need." The Transformer model utilizes self-attention mechanisms to understand the context of words within a sentence, making it an efficient and scalable method for processing long sequences of text.
+
 
 ## Ollama: Large Language Models, Demystified
 You're trying to build an AI-powered chatbot for your business. You want it to be smart, efficient, and able to handle complex queries. But the popular language models out there have long waiting lists, and registration is a hassle. What do you do? Enter Ollama, the open-source hero who's here to save the day!
