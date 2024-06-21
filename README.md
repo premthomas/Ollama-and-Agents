@@ -133,7 +133,7 @@ This is used to provide the model access to the internet.
 ```
 researcher = Agent(
   role='Researcher',
-  goal='Search the internet for the information requested,
+  goal='Search the internet for the information requested',
   backstory="""
   You are a researcher. Using the information in the task, you find out some of the most popular facts about the topic along with some of the trending aspects.
   You provide a lot of information thereby allowing a choice in the content selected for the final blog
@@ -156,6 +156,7 @@ writer = Agent(
   verbose=True,            # want to see the thinking behind
   allow_delegation=True,   # can ask the "researcher" for more information
   llm=ollama_llm           # using the local model
+)
 ```
 
 **Step 6:** Define the task that needs to be done by the "Researcher". Call this "Task1"
@@ -165,6 +166,7 @@ task1 = Task(
   description="""Research about open source LLMs vs closed source LLMs. 
   Your final answer MUST be a full analysis report""",
   agent=researcher
+)
 ```
 
 **Step 7:** Define the task that needs to be done by the "Technical Content Creator". Call this "Task2"
@@ -188,6 +190,7 @@ crew = Crew(
   agents=[researcher, writer],
   tasks=[task1, task2],
   verbose=2, # You can set it to 1 or 2 for different logging levels
+)
 ```
 
 **Step 9:**  Get your crew to start work
