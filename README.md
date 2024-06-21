@@ -121,10 +121,13 @@ from langchain.llms import Ollama
 ollama_llm = Ollama(model="openhermes")
 ```
 
-**Step 3:** Import and initialize DuckDuckGo
+**Step 3:** Import and initialize DuckDuckGo and create a search tool
 ```
 from langchain.tools import DuckDuckGoSearchRun
-search_tool = DuckDuckGoSearchRun()
+@tool('DuckDuckGoSearch')
+def searchduck(search_query: str):
+    """Search the web for information on a given topic"""
+    return DuckDuckGoSearchRun().run(search_query)
 ```
 This is used to provide the model access to the internet. 
 
@@ -140,7 +143,7 @@ researcher = Agent(
   """,
   verbose=True,            # want to see the thinking behind
   allow_delegation=False,  # Not allowed to ask any of the other roles
-  tools=[search_tool],     # Is allowed to use the following tools to conduct research
+  tools=[searchduck],     # Is allowed to use the following tools to conduct research
   llm=ollama_llm           # local model
 )
 ```
@@ -165,7 +168,8 @@ writer = Agent(
 task1 = Task(
   description="""Research about open source LLMs vs closed source LLMs. 
   Your final answer MUST be a full analysis report""",
-  agent=researcher
+  agent=researcher,
+  expected_output="A full analysis report on the differences between open source and closed source LLMs"
 )
 ```
 
@@ -179,7 +183,8 @@ task2 = Task(
   Make it sound cool, and avoid complex words so it doesn't sound like AI.
   Your final answer MUST be the full blog post of at least 4 paragraphs.
   The target word count for the blog post should be between 1,500 and 2,500 words, with a sweet spot at around 2,450 words.""",
-  agent=writer
+  agent=writer,
+  expected_output="A blog post of at least 4 paragraphs and between 1,500 and 2,500 words"
 )
 ```
 
