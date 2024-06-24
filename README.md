@@ -7,6 +7,8 @@ In this blog-style tutorial, I will be working towards the following objectives.
 5. Understand and use "Agents"
 6. Use points 1 through 4 to create a blog researcher and writer. 
 
+## Update [June 2024]
+Ollama is now available for preview on Windows! I would still suggest that you try WSL.
 
 ## What are Large Language Models?
 
@@ -67,6 +69,9 @@ With Ollama, you can ditch the waiting lists and enjoy the benefits of cutting-e
 
 ## but .. (there is always one)
 As of the time of writing this blog, Ollama is not available on Windows. It has been released for MacOS and Linux. This puts some developers at a significant disadvantage as the thought of programming in Linux sends shivers down some spines. Some time ago, the only way to experience Linux was to have it installed in a separate space on your machine. This was cumbersome and the files were not shared without significant effort. Do you remember the times when Microsoft used to hate Linux and did everything in its power to stop integration in the name of "security"? Well, I am glad to inform the few who have not kept up with the advancements that Microsoft now loves Linux. We have now got WSL2 or the second version of "Windows Subsystem for Linux".
+
+## Update [June 2024]
+Ollama is now available for preview on Windows! I would still suggest that you try WSL. 
 
 
 ## Windows Subsystem for Linux (WSL)
