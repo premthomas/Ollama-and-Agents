@@ -98,21 +98,32 @@ For ease of explainability, I will be using a notebook. The full code can be fou
 
 Run the following code snippets once per project build, on the terminal.
 
-`pip install crewai`
-Installs the CrewAI library
-
-`pip install langchain`
+```
+pip install langchain
+```
 Installs the LangChain library
 
-`pip install duckduckgo-search`
+```
+pip install crewai
+```
+Installs the CrewAI library
+
+```
+pip install duckduckgo-search
+```
 Install the DuckDuckGo-Search library
 
-`ollama pull openhermes` 
+```
+ollama pull openhermes
+``` 
 Pulls the model into the local system. "openhermes" is the model and can be replaced with any of the models hosted by Ollama.
 
-**Step 1:** Import the library for CrewAI
+**Step 1:** Import the libraries for CrewAI and LangChain
 
-`from crewai import Agent, Task, Crew, Process`
+```
+from crewai import Agent, Task, Crew
+from langchain_community.tools import DuckDuckGoSearchRun
+```
 
 **Step 2:** Import Ollama and initialize the llm
 
@@ -123,32 +134,39 @@ ollama_llm = Ollama(model="openhermes")
 
 **Step 3:** Import and initialize DuckDuckGo and create a search tool
 ```
-from langchain.tools import DuckDuckGoSearchRun
-@tool('DuckDuckGoSearch')
-def searchduck(search_query: str):
-    """Search the web for information on a given topic"""
-    return DuckDuckGoSearchRun().run(search_query)
+from crewai_tools import tool
+@tool("Duck_Duck_Go_Search")
+def ddgsearch(question: str) -> str:
+    """Clear description for what this tool is useful for, your agent will need this information to use it."""
+    # Function logic here
+    return DuckDuckGoSearchRun().run(question)
 ```
 This is used to provide the model access to the internet. 
 
-**Step 4:** Configure the first agent. I am going with the "Researcher".
+**Step 4:** Introducing a variable called "research_topic". This variable should be changed in your code to try out different topics.
+```
+research_topic = "Differences between open source large language models and closed source large language models."
+```
+
+**Step 5:** Configure the first agent. I am going with the "Researcher".
 
 ```
 researcher = Agent(
   role='Researcher',
-  goal='Search the internet for the information requested',
+  goal='Search the internet about {research_topic}',
   backstory="""
   You are a researcher. Using the information in the task, you find out some of the most popular facts about the topic along with some of the trending aspects.
   You provide a lot of information thereby allowing a choice in the content selected for the final blog
   """,
   verbose=True,            # want to see the thinking behind
   allow_delegation=False,  # Not allowed to ask any of the other roles
-  tools=[searchduck],     # Is allowed to use the following tools to conduct research
+  # tools=[DuckDuckGoSearchRun()],
+  tools=[ddsearch],        # Is allowed to use the following tools to conduct research
   llm=ollama_llm           # local model
 )
 ```
 
-**Step 5:** Configure the second agent. I am going to call this the "Technical Content Creator".
+**Step 6:** Configure the second agent. I am going to call this the "Technical Content Creator".
 
 ```
 writer = Agent(
@@ -162,33 +180,31 @@ writer = Agent(
 )
 ```
 
-**Step 6:** Define the task that needs to be done by the "Researcher". Call this "Task1"
+**Step 7:** Define the task that needs to be done by the "Researcher". Call this "Task1"
 
 ```
 task1 = Task(
-  description="""Research about open source LLMs vs closed source LLMs. 
-  Your final answer MUST be a full analysis report""",
   agent=researcher,
-  expected_output="A full analysis report on the differences between open source and closed source LLMs"
+  description=research_topic,
+  expected_output="A complete analysis of the {research_topic}, presented as a report.",
 )
 ```
 
-**Step 7:** Define the task that needs to be done by the "Technical Content Creator". Call this "Task2"
+**Step 8:** Define the task that needs to be done by the "Technical Content Creator". Call this "Task2"
 
 ```
 task2 = Task(
+  agent=writer,
   description="""Using the insights provided, develop an engaging blog
   post that highlights the most significant facts and differences between open-source LLMs and closed-source LLMs.
   Your post should be informative yet accessible, catering to a tech-savvy audience.
-  Make it sound cool, and avoid complex words so it doesn't sound like AI.
-  Your final answer MUST be the full blog post of at least 4 paragraphs.
-  The target word count for the blog post should be between 1,500 and 2,500 words, with a sweet spot at around 2,450 words.""",
-  agent=writer,
-  expected_output="A blog post of at least 4 paragraphs and between 1,500 and 2,500 words"
+  Make it sound simple, and avoid complex words so it doesn't sound AI generated.""",
+  expected_output="""A article containing a minimum of 4 paragraphs. contains no more than 2500 words but no less than 1500 words.
+  The final output will not contain any extra fluff like "Paragraph 1:" or any action the writer should do.""",
 )
 ```
 
-**Step 8:** Instantiate the "crew" with a sequential process
+**Step 9:** Instantiate the "crew" with a sequential process
 
 ```
 crew = Crew(
@@ -198,7 +214,7 @@ crew = Crew(
 )
 ```
 
-**Step 9:**  Get your crew to start work
+**Step 10:**  Get your crew to start work
 
 ```
 result = crew.kickoff()
