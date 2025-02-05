@@ -117,6 +117,7 @@ Installs the LangChain and its community libraries
 
 ```
 pip install crewai
+pip install crewai-tools
 ```
 Installs the CrewAI library
 
@@ -149,7 +150,8 @@ ollama_llm = OllamaLLM(model="openhermes")
 
 **Step 3:** Import and initialize DuckDuckGo and create a search tool
 ```
-from crewai_tools import tool
+# from crewai_tools import tool  # Deprecated
+from crewai.tools import tool
 @tool("Duck_Duck_Go_Search")
 def ddgsearch(question: str) -> str:
     """Clear description for what this tool is useful for, your agent will need this information to use it."""
