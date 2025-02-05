@@ -53,11 +53,11 @@ What is better than an agent? Multiple agents. [CrewAI](https://github.com/joaom
 
 
 ## Ollama: Large Language Models, Demystified
-You're trying to build an AI-powered chatbot for your business. You want it to be smart, efficient, and able to handle complex queries. But the popular language models out there have long waiting lists, and registration is a hassle. What do you do? Enter Ollama, the open-source hero who's here to save the day!
+You're trying to build an AI-powered chatbot for your business. You want it to be smart, efficient, and able to handle complex queries. However, the popular language models have long waiting lists, and registration is a hassle. What do you do? Enter Ollama.
 
-Ollama is a platform designed for running, managing, and building local applications with large language models (LLMs). It's like having your very own AI lab right at your fingertips. But what makes Ollama so special? Let's dive in:
+[Ollama](https://ollama.com/) is a platform designed for running, managing, and building local applications with large language models (LLMs). It's like having your very own AI lab right at your fingertips. But what makes Ollama so special? Let's dive in:
 
-1. **Flexibility is Key**: Ollama lets you customize and create your models using the "Modelfile" format, giving you the freedom to tailor your LLM to your specific needs.
+1. **Flexibility is Key**: Ollama lets you customize and create your models using the "Modelfile" format, allowing you to tailor your LLM to your specific needs.
 2. **Popular Models, Supported**: Whether you're a fan of Llama 2, Code Llama, OPT, or PaLM, Ollama has got you covered with its extensive library.
 3. **API Savvy**: Need to serve your models via gRPC or HTTP APIs? Ollama's got you covered there too! It's all about the seamless integration.
 4. **Conversational Champions**: Ready to take on conversational agents? Ollama helps you create chatbots and assistants that can carry on intelligent conversations with your users.
@@ -68,18 +68,18 @@ With Ollama, you can ditch the waiting lists and enjoy the benefits of cutting-e
 
 
 ## but .. (there is always one)
-As of the time of writing this blog, Ollama is not available on Windows. It has been released for MacOS and Linux. This puts some developers at a significant disadvantage as the thought of programming in Linux sends shivers down some spines. Some time ago, the only way to experience Linux was to have it installed in a separate space on your machine. This was cumbersome and the files were not shared without significant effort. Do you remember the times when Microsoft used to hate Linux and did everything in its power to stop integration in the name of "security"? Well, I am glad to inform the few who have not kept up with the advancements that Microsoft now loves Linux. We have now got WSL2 or the second version of "Windows Subsystem for Linux".
+As of the time of writing this blog, Ollama is not available on Windows. It has been released for MacOS and Linux. This puts some developers at a significant disadvantage as the thought of programming in Linux sends shivers down some spines. Some time ago, the only way to experience Linux was to install it in a separate space on your machine. This was cumbersome and the files were not shared without significant effort. Do you remember when Microsoft hated Linux and tried to stop integration in the name of "security"? I am glad to inform the few who have not kept up with the advancements that Microsoft now loves Linux. We now have WSL2 or the second version of "Windows Subsystem for Linux".
 
 ## Update [June 2024]
-Ollama is now available for preview on Windows! I would still suggest that you try WSL. 
+Ollama is now available for preview on Windows! I recommend that you give WSL a try. 
 
 
 ## Windows Subsystem for Linux (WSL)
 WSL2 is the latest version of the Windows Subsystem for Linux, which allows Windows users to access the Linux kernel directly. It has become increasingly popular due to its ease of use and interoperability between Windows and Linux. Some of the most popular facts about WSL2 include:
 
-  - WSL2 uses a virtualized Linux kernel with less overhead compared to traditional virtual machines, making it more efficient.
+  - WSL2 uses a virtualized Linux kernel with less overhead when compared to traditional virtual machines, making it more efficient.
   - The system call compatibility between WSL2 and Linux is full, allowing for seamless integration between the two operating systems.
-  - WSL2 makes it easy to share files between Windows and Linux environments without requiring extra work.
+  - With WSL2, sharing files between Windows and Linux environments is easy and requires no extra work.
   - Users can choose from various Linux distributions available on the Microsoft Store or install WSL2 using PowerShell.
   - The Windows Terminal is a recommended tool for working with terminals in Windows, as it provides a modern, fast, and efficient experience.
   - It's easier to use WSL2 compared to traditional virtual machines or dual-boot setups, as no modifications are needed for Linux applications, utilities, and Bash command-line tools.
@@ -91,7 +91,12 @@ Use this [link](https://learn.microsoft.com/en-us/windows/wsl/about) to understa
 
 
 ## What next? (Part one)
-You are convinced. You have installed WSL2 and have access to bash. Let's talk a little about the programming language and interface we will be using to accomplish our task.
+You are convinced. You have installed WSL2 and have access to bash. 
+
+The next step is to install Ollama. Execute the following command in the shell  
+```
+curl -fsSL https://ollama.com/install.sh | sh
+```
 
 The preferred programming language for Data Scientists is Python. And the interface I will choose today is Visual Studio Code. The short answer to why I am choosing this editor is the ability to write both complex Python packages and simple notebooks for testing code. You can learn more about Visual Studio Code [here](https://code.visualstudio.com/docs). Implement the simple example provided [here](https://code.visualstudio.com/docs/python/python-tutorial) to ensure that your machine and environment are fully set up. 
 
@@ -121,7 +126,7 @@ Install the DuckDuckGo-Search library
 ```
 ollama pull openhermes
 ``` 
-Pulls the model into the local system. "openhermes" is the model and can be replaced with any of the models hosted by Ollama.
+Pulls the model into the local system. "openhermes" is the model and can be replaced with any of the models hosted by Ollama. [Here](https://ollama.com/search) is the list of Ollama models that are currently available. This list is updated with their latest models and versions.
 
 **Step 1:** Import the libraries for CrewAI and LangChain
 
