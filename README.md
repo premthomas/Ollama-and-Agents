@@ -109,9 +109,11 @@ For ease of explainability, I will be using a notebook. The full code can be fou
 Run the following code snippets once per project build, on the terminal.
 
 ```
-pip install langchain
+pip install langchain ## Sometimes, this code alone does not work. 
+pip install langchain-community langchain-core
+pip install -U langchain-ollama
 ```
-Installs the LangChain library
+Installs the LangChain and its community libraries 
 
 ```
 pip install crewai
@@ -138,8 +140,11 @@ from langchain_community.tools import DuckDuckGoSearchRun
 **Step 2:** Import Ollama and initialize the llm
 
 ```
-from langchain.llms import Ollama
-ollama_llm = Ollama(model="openhermes")
+# from langchain.llms import Ollama         # Deprecated
+# ollama_llm = Ollama(model="openhermes")   # Deprecated
+
+from langchain_ollama import OllamaLLM
+ollama_llm = OllamaLLM(model="openhermes")
 ```
 
 **Step 3:** Import and initialize DuckDuckGo and create a search tool
